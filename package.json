@@ -1,0 +1,62 @@
+{
+  "name": "rekit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etroynov/rekit.git"
+  },
+  "keywords": [],
+  "author": "Evgeniy Troynov <>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etroynov/rekit/issues"
+  },
+  "homepage": "https://github.com/etroynov/rekit#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.53",
+    "@babel/runtime": "^7.0.0-beta.53",
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react": "^4.0.0-alpha.14",
+    "@types/jest": "^23.1.6",
+    "@types/react": "^16.4.6",
+    "@types/react-dom": "^16.0.6",
+    "@types/storybook__addon-actions": "^3.0.3",
+    "@types/storybook__addon-links": "^3.3.1",
+    "@types/storybook__react": "^3.0.8",
+    "jest": "^23.4.1",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "ts-jest": "^23.0.0",
+    "ts-loader": "^4.4.2",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "mapCoverage": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/"
+    ],
+    "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  }
+}
