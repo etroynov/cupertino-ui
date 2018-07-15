@@ -1,0 +1,10 @@
+{
+    "extends": [
+      "tslint-eslint-rules",
+      "tslint-config-airbnb",
+      "tslint-config-airbnb"
+    ],
+    "rules": {
+      "no-constant-condition": true
+    }
+  }
