@@ -36,12 +36,20 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-info": "^5.2.5",
+    "@storybook/addon-knobs": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
     "@svgr/rollup": "^4.3.3",
     "@types/jest": "^24.0.21",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
+    "@types/storybook__react": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "eslint": "^6.1.0",
@@ -58,6 +66,7 @@
     "lint-staged": "^7.3.0",
     "onchange": "6.1.0",
     "prettier": "^1.18.2",
+    "react-docgen-typescript-loader": "^3.3.0",
     "rollup": "^1.26.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -67,7 +76,8 @@
     "rollup-plugin-typescript2": "^0.24.3",
     "rollup-plugin-url": "^3.0.0",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "webpack-blocks": "^2.0.1"
   },
   "files": [
     "dist"
