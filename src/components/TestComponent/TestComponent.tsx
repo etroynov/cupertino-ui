@@ -3,12 +3,13 @@
  */
 
 import React from 'react';
+import cn from 'classnames/bind';
 
 /**
  * Styles
  */
 
-import './TestComponent.css';
+import styles from './TestComponent.scss';
 
 export interface Props {
   /**
@@ -17,8 +18,10 @@ export interface Props {
   text: string;
 }
 
+const cx = cn.bind(styles);
+
 export const TestComponent = ({ text }: Props): React.ReactNode => (
-  <div className="test">
+  <div className={cx(styles.test)}>
     Test Component: 
     {' '}
     {text}
