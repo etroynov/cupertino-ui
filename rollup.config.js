@@ -3,12 +3,11 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
-import postcssModules from 'postcss-modules';
+import autoprefixer from 'autoprefixer';
 import resolve from 'rollup-plugin-node-resolve';
+import localResolve from 'rollup-plugin-local-resolve';
 import url from 'rollup-plugin-url';
 import svgr from '@svgr/rollup';
-
-const cssExportMap = {};
 
 export default {
   input: 'src/index.ts',
@@ -24,6 +23,7 @@ export default {
     url(),
     svgr(),
     resolve(),
+    localResolve(),
     commonjs(),
     external(),
     babel({
@@ -31,17 +31,8 @@ export default {
     }),
     postcss({
       modules: true,
-      plugins: [
-        postcssModules({
-          getJSON (id, exportTokens) {
-            cssExportMap[id] = exportTokens;
-          }
-        })
-      ],
-      getExportNamed: false,
-      getExport (id) {
-        return cssExportMap[id];
-      },
+      plugins: [autoprefixer],
+      use: ['sass'],
       extract: 'dist/styles.css',
     }),
     typescript({

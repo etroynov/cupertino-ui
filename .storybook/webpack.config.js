@@ -1,3 +1,8 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const cssExtract = new MiniCssExtractPlugin({
+  filename: '[name].css',
+});
+
 module.exports = ({ config }) => {
   config.module.rules.push(
     {
@@ -13,10 +18,29 @@ module.exports = ({ config }) => {
       ],
     },
     {
-      test: /\.s[ac]ss$/i,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      test: /\.s?css$/,
+      oneOf: [
+        {
+          test: /\.module\.s?css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
+            },
+            'sass-loader',
+          ],
+        },
+        {
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        },
+      ],
     }
   );
+  config.plugins.push(cssExtract);
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };
